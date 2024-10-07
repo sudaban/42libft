@@ -6,8 +6,13 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:48:07 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/07 14:49:31 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/07 15:38:13 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, '\0', n);
+}

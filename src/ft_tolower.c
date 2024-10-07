@@ -6,8 +6,16 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:29 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/07 14:50:03 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/07 16:01:18 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
+}
