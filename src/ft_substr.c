@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 14:47:50 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/11 11:08:49 by sdaban           ###   ########.fr       */
+/*   Created: 2024/10/08 16:11:24 by sdaban            #+#    #+#             */
+/*   Updated: 2024/10/11 14:01:20 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t nbr)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	if (!dst && !src)
+	char	*str;
+	char	*src;
+
+	src = (char *)s;
+	if (!src)
 		return (NULL);
-	if (dst < src)
-		ft_memcpy(dst, src, nbr);
-	else if (dst > src)
+	if (start >= ft_strlen(s))
 	{
-		while (nbr--)
-			*((unsigned char *)(dst + nbr)) = *((unsigned char *)(src + nbr));
+		str = (char *)malloc(sizeof(char));
+		if (!str)
+			return (NULL);
+		*str = '\0';
 	}
-	return (dst);
+	else
+	{
+		if ((ft_strlen(s) - start) < len)
+			len = ft_strlen(s) - start;
+		str = (char *)malloc((sizeof(char) * len) + 1);
+		if (!str)
+			return (NULL);
+		ft_strlcpy(str, (char *)(s + start), len + 1);
+	}
+	return (str);
 }

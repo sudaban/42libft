@@ -6,20 +6,20 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:53 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/07 15:50:03 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/11 11:05:46 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t nbr)
 {
 	size_t	i;
 
-	if (dst == NULL && src == NULL)
+	if (dst == 0 && src == 0)
 		return (0);
 	i = 0;
-	while (i < n)
+	while (i < nbr)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;

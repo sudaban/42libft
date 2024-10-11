@@ -6,13 +6,13 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:48:07 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/07 15:38:13 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/10 12:39:27 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *src, size_t number)
 {
-	ft_memset(s, '\0', n);
+	ft_memset(src, '\0', number);
 }

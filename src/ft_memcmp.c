@@ -6,21 +6,21 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:55 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/07 15:49:54 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/11 14:05:04 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *src1, const void *src2, size_t nbr)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (i < nbr)
 	{
-		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
-			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		if (((unsigned char *)src1)[i] != ((unsigned char *)src2)[i])
+			return (((unsigned char *)src1)[i] - ((unsigned char *)src2)[i]);
 		i++;
 	}
 	return (0);
