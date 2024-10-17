@@ -6,25 +6,22 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:47 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/11 11:39:05 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/17 11:03:23 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*str)
+	while (*s)
 	{
-		if (*str == (char)c)
-		{
-			return ((char *)str);
-		}
-		str++;
+		if (*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
 	}
-	if (c == '\0')
-	{
-		return ((char *)str);
-	}
-	return (0);
+	if (*s == (unsigned char)c)
+		return ((char *)s);
+	else
+		return (NULL);
 }

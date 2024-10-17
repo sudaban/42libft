@@ -6,11 +6,9 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:02:11 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/11 11:50:02 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/17 17:49:26 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

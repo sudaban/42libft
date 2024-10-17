@@ -6,18 +6,16 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:12:59 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/10 16:29:39 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/17 15:38:02 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_countword(char const *s, char c)
+static	size_t	ft_countword(char const *s, char c)
 {
 	size_t	count;
 
-	if (!*s)
-		return (0);
 	count = 0;
 	while (*s)
 	{
@@ -31,15 +29,27 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static void	ft_freeall(char **lst, int i)
 {
-	char	**lst;
-	size_t	word_len;
-	int		i;
+	while (i >= 0)
+		free(lst[i--]);
+	free(lst);
+}
 
-	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
-	if (!s || !lst)
-		return (0);
+static char	*ft_getword(const char *s, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (ft_substr(s, 0, len));
+}
+
+static int	ft_fill(char **lst, const char *s, char c)
+{
+	int	i;
+
 	i = 0;
 	while (*s)
 	{
@@ -47,37 +57,27 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			if (!ft_strchr(s, c))
-				word_len = ft_strlen(s);
-			else
-				word_len = ft_strchr(s, c) - s;
-			lst[i++] = ft_substr(s, 0, word_len);
-			s += word_len;
+			lst[i] = ft_getword(s, c);
+			if (!lst[i])
+			{
+				ft_freeall(lst, i - 1);
+				return (0);
+			}
+			s += ft_strlen(lst[i++]);
 		}
 	}
 	lst[i] = NULL;
-	return (lst);
+	return (1);
 }
 
-#include <stdio.h>
-
-int main(void)
+char	**ft_split(char const *s, char c)
 {
-    char **result;
-    char *str = "42 Tane proje yaptim mental olarak iyi hissetmiyorum";
-    char delimiter = ' ';
-    int i = 0;
+	char	**lst;
 
-    result = ft_split(str, delimiter);
-    if (!result)
-        return 1;
-
-    while (result[i])
-    {
-        printf("%s\n", result[i]);
-        free(result[i]); 
-        i++;
-    }
-    free(result);
-    return 0;
+	if (!s)
+		return (NULL);
+	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	if (!lst || !ft_fill(lst, s, c))
+		return (NULL);
+	return (lst);
 }

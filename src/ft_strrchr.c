@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:26 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/11 12:22:36 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/17 11:05:01 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int		i;
+	int	i;
 
-	i = 0;
-	while (str[i] != c)
+	i = ft_strlen(str);
+	while (i >= 0)
 	{
-		if (str[i] == '\0')
-			return (NULL);
-		i++;
+		if (str[i] == (unsigned char)c)
+			return ((char *)&str[i]);
+		i--;
 	}
-	return ((char *)str + i);
+	return (NULL);
 }

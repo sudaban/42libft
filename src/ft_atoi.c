@@ -6,11 +6,9 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:48:09 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/11 10:57:22 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/17 17:49:50 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
