@@ -6,55 +6,56 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:12:19 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/09 17:37:46 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/19 17:20:48 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char const c, char const *set)
+static int	is_char_in_set(char const character, char const *set)
 {
-	int	cur;
+	int	current_index;
 
-	cur = -1;
-	while (set[++cur])
-		if (set[cur] == c)
+	current_index = -1;
+	while (set[++current_index])
+		if (set[current_index] == character)
 			return (1);
 	return (0);
 }
 
-static char	*empty_string(void)
+static char	*create_empty_string(void)
 {
-	char	*str;
+	char	*empty_str;
 
-	str = malloc(sizeof(char));
-	if (!str)
+	empty_str = malloc(sizeof(char));
+	if (!empty_str)
 		return (NULL);
-	ft_strlcpy(str, "", 1);
-	return (str);
+	ft_strlcpy(empty_str, "", 1);
+	return (empty_str);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
-	size_t	s1_len;
-	char	*trim;
+	size_t	start_index;
+	size_t	end_index;
+	size_t	input_length;
+	char	*trimmed_string;
 
 	if (!s1 || !set)
 		return (NULL);
-	start = 0;
-	while (is_in_set(s1[start], set))
-		start++;
-	s1_len = ft_strlen(s1);
-	end = s1_len - 1;
-	if (start == s1_len)
-		return (empty_string());
-	while (is_in_set(s1[end], set))
-		end--;
-	trim = malloc((end - start + 2) * sizeof(char));
-	if (!trim)
+	start_index = 0;
+	while (is_char_in_set(s1[start_index], set))
+		start_index++;
+	input_length = ft_strlen(s1);
+	end_index = input_length - 1;
+	if (start_index == input_length)
+		return (create_empty_string());
+	while (is_char_in_set(s1[end_index], set))
+		end_index--;
+	trimmed_string = malloc((end_index - start_index + 2) * sizeof(char));
+	if (!trimmed_string)
 		return (NULL);
-	ft_strlcpy(trim, (s1 + start), (end - start + 2));
-	return (trim);
+	ft_strlcpy(trimmed_string,
+		(s1 + start_index), (end_index - start_index + 2));
+	return (trimmed_string);
 }

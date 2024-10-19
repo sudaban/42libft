@@ -6,67 +6,67 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:12:59 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/17 15:38:02 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/19 16:32:24 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_countword(char const *s, char c)
+static	size_t	count_words(const char *str, char delimiter)
 {
-	size_t	count;
+	size_t	word_count;
 
-	count = 0;
-	while (*s)
+	word_count = 0;
+	while (*str)
 	{
-		while (*s == c)
-			s++;
-		if (*s)
-			count++;
-		while (*s != c && *s)
-			s++;
+		while (*str == delimiter)
+			str++;
+		if (*str)
+			word_count++;
+		while (*str != delimiter && *str)
+			str++;
 	}
-	return (count);
+	return (word_count);
 }
 
-static void	ft_freeall(char **lst, int i)
+static void	free_all_memory(char **word_list, int index)
 {
-	while (i >= 0)
-		free(lst[i--]);
-	free(lst);
+	while (index >= 0)
+		free(word_list[index--]);
+	free(word_list);
 }
 
-static char	*ft_getword(const char *s, char c)
+static char	*extract_word(const char *str, char delimiter)
 {
-	size_t	len;
+	size_t	word_length;
 
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (ft_substr(s, 0, len));
+	word_length = 0;
+	while (str[word_length] && str[word_length] != delimiter)
+		word_length++;
+	return (ft_substr(str, 0, word_length));
 }
 
-static int	ft_fill(char **lst, const char *s, char c)
+static int	fill_word_list(char **word_list, const char *str, char delimiter)
 {
-	int	i;
+	int	index;
 
-	i = 0;
-	while (*s)
+	index = 0;
+	while (*str)
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s)
+		while (*str == delimiter && *str)
+			str++;
+		if (*str)
 		{
-			lst[i] = ft_getword(s, c);
-			if (!lst[i])
+			word_list[index] = extract_word(str, delimiter);
+			if (!word_list[index])
 			{
-				ft_freeall(lst, i - 1);
+				free_all_memory(word_list, index - 1);
 				return (0);
 			}
-			s += ft_strlen(lst[i++]);
+			str += ft_strlen(word_list[index++]);
 		}
 	}
-	lst[i] = NULL;
+	word_list[index] = NULL;
 	return (1);
 }
 
@@ -76,8 +76,8 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
-	if (!lst || !ft_fill(lst, s, c))
+	lst = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!lst || !fill_word_list(lst, s, c))
 		return (NULL);
 	return (lst);
 }

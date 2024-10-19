@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:11:24 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/16 17:45:05 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/19 17:16:43 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char	*str;
-	char	*src;
+	char	*substring;
+	size_t	source_length;
 
-	src = (char *)s;
-	if (!src)
+	if (!s)
 		return (NULL);
-	if (start >= ft_strlen(s))
+	source_length = ft_strlen(s);
+	if (start >= source_length)
 	{
-		str = (char *)malloc(sizeof(char));
-		if (!str)
+		substring = (char *)malloc(sizeof(char));
+		if (!substring)
 			return (NULL);
-		*str = '\0';
+		*substring = '\0';
 	}
 	else
 	{
-		if ((ft_strlen(s) - start) < len)
-			len = ft_strlen(s) - start;
-		str = (char *)malloc((sizeof(char) * len) + 1);
-		if (!str)
+		if ((source_length - start) < len)
+			len = source_length - start;
+		substring = (char *)malloc((len + 1) * sizeof(char));
+		if (!substring)
 			return (NULL);
-		ft_strlcpy(str, (char *)(s + start), len + 1);
+		ft_strlcpy(substring, (s + start), len + 1);
 	}
-	return (str);
+	return (substring);
 }

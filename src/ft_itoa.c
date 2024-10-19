@@ -6,13 +6,13 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:13:01 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/16 17:18:56 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/19 14:13:57 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	pull_numbers(int num)
+size_t	pull_digit_count(int num)
 {
 	size_t	i;
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 	long int	num;
 
 	num = n;
-	digits = pull_numbers(n);
+	digits = pull_digit_count(n);
 	if (n < 0)
 	{
 		num *= -1;
