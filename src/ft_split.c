@@ -6,11 +6,12 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:12:59 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/19 16:32:24 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/20 12:20:52 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static	size_t	count_words(const char *str, char delimiter)
 {

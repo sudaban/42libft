@@ -6,11 +6,12 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:13:54 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/16 17:23:04 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/20 12:21:28 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
