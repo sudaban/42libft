@@ -6,11 +6,10 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:13:01 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/20 12:21:01 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/21 11:42:19 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
 size_t	pull_digit_count(int num)

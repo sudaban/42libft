@@ -6,13 +6,15 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:39 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/17 10:41:32 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/22 10:04:09 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+#include <sys/_types/_size_t.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (n == 0)
 		return (0);

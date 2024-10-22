@@ -6,11 +6,11 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:47 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/17 11:03:23 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/21 11:23:52 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <sys/_types/_null.h>
 
 char	*ft_strchr(const char *s, int c)
 {
