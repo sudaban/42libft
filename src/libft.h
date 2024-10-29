@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:38:38 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/22 14:41:07 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/10/22 16:08:53 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	*ft_calloc(size_t count, size_t size);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
