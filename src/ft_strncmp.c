@@ -6,11 +6,11 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:39 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/22 10:04:09 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:22:01 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/_types/_size_t.h>
+#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

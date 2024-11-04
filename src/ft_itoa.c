@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-size_t	pull_digit_count(int num)
+static size_t	pull_digit_count(int num)
 {
 	size_t	i;
 

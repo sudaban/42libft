@@ -6,11 +6,11 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:57 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/21 16:02:46 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:21:35 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/_types/_size_t.h>
+#include <stddef.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

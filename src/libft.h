@@ -6,14 +6,14 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:38:38 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/22 16:08:53 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:21:04 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <sys/_types/_size_t.h>
+# include <stddef.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

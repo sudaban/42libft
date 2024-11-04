@@ -6,11 +6,11 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:37 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/21 11:25:27 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:22:11 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/_types/_size_t.h>
+#include <stddef.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:47:55 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/21 16:03:12 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:21:33 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/_types/_size_t.h>
+#include <stddef.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

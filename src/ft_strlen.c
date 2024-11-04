@@ -6,11 +6,11 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:34:51 by sdaban            #+#    #+#             */
-/*   Updated: 2024/10/21 16:07:30 by sdaban           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:21:57 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/_types/_size_t.h>
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {
